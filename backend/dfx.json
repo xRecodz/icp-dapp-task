@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "canisters": {
+    "chora_token": {
+      "type": "motoko",
+      "main": "backend/chora_token.mo"
+    },
+    "task": {
+      "type": "motoko",
+      "main": "backend/task.mo",
+      "init_arg": "(principal \"$(dfx canister id chora_token)\", 50)"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:4943",
+      "type": "ephemeral"
+    }
+  }
+}
